@@ -18,12 +18,12 @@
   }
   @font-face {
     font-family: "Neue Haas Unica";
-    src: url("fonts/NeueHaasUnica-Regular.woff2") format("woff2");
+    src: url("fonts/NeueHaasUnica-Medium.woff2") format("woff2");
     font-weight: 500; font-style: normal; font-display: swap;
   }
   @font-face {
     font-family: "Neue Haas Unica";
-    src: url("fonts/NeueHaasUnica-Medium.woff2") format("woff2");
+    src: url("fonts/NeueHaasUnica-Bold.woff2") format("woff2");
     font-weight: 600 700; font-style: normal; font-display: swap;
   }
 
@@ -37,24 +37,30 @@
   body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.55 var(--font); }
   .ramp { display:flex; height:10px; }
   .ramp i { flex:1; }
-  main { max-width:720px; margin:0 auto; padding:56px 24px 40px; }
+  main { max-width:1100px; margin:0 auto; padding:56px 24px 40px; }
   h1 { font-size:40px; line-height:1.1; font-weight:700; margin:0 0 12px; letter-spacing:.01em; }
   .lede { font-size:18px; color:var(--muted); margin:0 0 40px; max-width:56ch; }
-  h2 { font-size:15px; font-weight:700; color:var(--muted); margin:0 0 4px; }
-  ul { list-style:none; margin:0; padding:0; border-top:1px solid var(--line); }
-  li { border-bottom:1px solid var(--line); }
-  li a { display:grid; grid-template-columns:1fr auto; gap:4px 24px; padding:20px 12px; color:inherit; text-decoration:none; border-left:3px solid transparent; }
-  li a:hover { background:var(--accent-soft); border-left-color:var(--accent); }
-  li a:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
-  .t { font-size:19px; font-weight:700; }
-  .d { grid-column:1; color:var(--muted); max-width:58ch; }
-  .go { grid-row:1 / span 2; grid-column:2; align-self:center; color:var(--accent); font-weight:500; white-space:nowrap; }
-  footer { max-width:720px; margin:0 auto; padding:0 24px 56px; color:var(--muted); font-size:14px; }
+  h2 { font-size:28px; font-weight:700; margin:0 0 20px; }
+  /* one square coloured box per map. To add a map: copy a <li> and pick a colour class (c1, c2, c3) */
+  .cards { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px; }
+  .card { display:flex; flex-direction:column; justify-content:space-between; min-height:270px; height:100%; padding:48px; color:#111; text-decoration:none; }
+  .card:focus-visible { outline:3px solid var(--ink); outline-offset:3px; }
+  .c1 { background:#ff2d6b; color:#fff; }
+  .c2 { background:#b388ff; }
+  .c3 { background:#c6f700; }
+  .t { display:block; font-size:17px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+  .d { display:block; margin-top:10px; font-size:15px; opacity:.85; max-width:42ch; }
+  .go { align-self:flex-start; display:inline-flex; align-items:center; gap:14px; margin-top:36px; padding:18px 22px; border:1px solid currentColor;
+        font-family:Consolas, "Cascadia Mono", "Courier New", monospace; font-size:14px; letter-spacing:.04em; text-transform:uppercase; }
+  .card:hover .go { background:#111; color:#fff; border-color:#111; }
+  .c1:hover .go { background:#fff; color:#ff2d6b; border-color:#fff; }
+  .logo { display:block; width:min(100%,320px); height:auto; margin:0 0 20px; }
+  footer { max-width:1100px; margin:0 auto; padding:0 24px 56px; color:var(--muted); font-size:14px; }
   footer a { color:inherit; }
   .logo { display:block; width:min(100%,320px); height:auto; margin:0 0 20px; }
   @media (max-width:520px) {
     main { padding-top:36px; } h1 { font-size:32px; }
-    li a { grid-template-columns:1fr; } .go { grid-row:auto; grid-column:1; margin-top:6px; }
+    .card { padding:32px; min-height:240px; }
   }
 </style>
 </head>
@@ -69,27 +75,31 @@
   <p class="lede">Interactive maps and open tools from the project. Each one opens in its own page.</p>
 
   <h2>Maps</h2>
-  <ul>
-    <!-- To add another map: copy this <li> block, change the link, title and description. -->
+  <ul class="cards">
+    <!-- To add another map: copy one <li>, change the link, title, description and the colour class (c1, c2, c3). -->
     <li>
-      <a href="energy-vulnerability/">
-        <span class="t">Energy vulnerability, Padova</span>
-        <span class="d">Sociodemographic, building and energy indicators for each urban unit, plus modelled energy use of census sections.</span>
-        <span class="go">Open the map</span>
+      <a class="card c1" href="energy-vulnerability/">
+        <span>
+          <span class="t">Energy vulnerability, Padova</span>
+          <span class="d">Sociodemographic, building and energy indicators for each urban unit, with the methodology of every indicator.</span>
+        </span>
+        <span class="go">Open the map <span aria-hidden="true">&rarr;</span></span>
       </a>
     </li>
     <li>
-      <a href="building-energy/">
-        <span class="t">Building energy, Padova</span>
-        <span class="d">Modelled heating and cooling consumption and CO&#8322; emissions of every building footprint. Click a building to see its height, floors and areas.</span>
-        <span class="go">Open the map</span>
+      <a class="card c2" href="building-energy/">
+        <span>
+          <span class="t">Building energy, Padova</span>
+          <span class="d">Modelled heating and cooling consumption and CO&#8322; emissions, for every building footprint and for each census section.</span>
+        </span>
+        <span class="go">Open the map <span aria-hidden="true">&rarr;</span></span>
       </a>
     </li>
   </ul>
 </main>
 <footer>
   <!-- Logo: put the file "logo.png" in the same folder as this index.html (hidden until the file exists) -->
-  <!--img class="logo" src="logo.png" alt="RECLAIM logo" onerror="this.style.display='none'"-->
+  <!-- img class="logo" src="logo.png" alt="RECLAIM logo" onerror="this.style.display='none'">
   <!-- EDIT: credits, funding line, contact 
   Fondazione CMCC. Code and data notes are in the <a href="https://github.com/chiaquino/reclaim">GitHub repository</a>. -->
 </footer>
