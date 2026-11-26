@@ -7,10 +7,10 @@
 <meta name="description" content="Interactive maps and open tools from the RECLAIM project.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   /* EDIT: page font. To use another one, change this line (and the Google Fonts <link> above if needed). */
-  :root { --font: "Poppins", system-ui, sans-serif;system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; --ink:#1d2a2e; --muted:#5b696d; --paper:#f6f7f5; --line:#d6dcd9; --accent:#17566b; --accent-soft:#e3eef1; }
+  :root { --font:"Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; --ink:#1d2a2e; --muted:#5b696d; --paper:#f6f7f5; --line:#d6dcd9; --accent:#17566b; --accent-soft:#e3eef1; }
   @media (prefers-color-scheme: dark) {
     :root { --ink:#e8eeee; --muted:#9fb0b4; --paper:#141b1d; --line:#2b383b; --accent:#7cc0d6; --accent-soft:#1c2c31; }
   }
@@ -20,7 +20,7 @@
   .ramp { display:flex; height:10px; }
   .ramp i { flex:1; }
   main { max-width:720px; margin:0 auto; padding:56px 24px 40px; }
-  .logo { display:block; width:min(100%,380px); height:auto; margin:0 0 28px; }
+  .logo { display:block; width:min(100%,320px); height:auto; margin:0 0 20px; }
   .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
   h1 { font-size:40px; line-height:1.1; font-weight:600; margin:0 0 12px; letter-spacing:.01em; }
   .lede { font-size:18px; color:var(--muted); margin:0 0 40px; max-width:56ch; }
@@ -47,10 +47,8 @@
   <i style="background:#1a9641"></i><i style="background:#58b453"></i><i style="background:#96d265"></i><i style="background:#c4e687"></i><i style="background:#ebf7ad"></i><i style="background:#ffedab"></i><i style="background:#fec981"></i><i style="background:#f99d59"></i><i style="background:#e85b3b"></i><i style="background:#d7191c"></i>
 </div>
 <main>
-  <!-- Logo: put the file "logo.png" in the same folder as this index.html -->
-  <img class="logo" src="logo.png" alt="RECLAIM logo">
   <!-- EDIT: project name and one-sentence description -->
-  <h1 class="sr">RECLAIM</h1>
+  <h1>RECLAIM</h1>
   <p class="lede">Interactive maps and open tools from the project. Each one opens in its own page.</p>
 
   <h2>Maps</h2>
@@ -66,6 +64,8 @@
   </ul>
 </main>
 <footer>
+  <!-- Logo: put the file "logo.png" in the same folder as this index.html -->
+  <img class="logo" src="logo.png" alt="RECLAIM logo">
   <!-- EDIT: credits, funding line, contact -->
   Fondazione CMCC. Code and data notes are in the <a href="https://github.com/chiaquino/reclaim">GitHub repository</a>.
 </footer>
