@@ -40,14 +40,15 @@
   main { max-width:1100px; margin:0 auto; padding:56px 24px 40px; }
   h1 { font-size:40px; line-height:1.1; font-weight:700; margin:0 0 12px; letter-spacing:.01em; }
   .lede { font-size:18px; color:var(--muted); margin:0 0 40px; max-width:56ch; }
+  .lede { font-family:Consolas, "Cascadia Mono", "Courier New", monospace; font-size:18px; color:var(--muted); margin:0 0 40px; max-width:56ch; }
   h2 { font-size:28px; font-weight:700; margin:0 0 20px; }
   /* one square coloured box per map. To add a map: copy a <li> and pick a colour class (c1, c2, c3) */
   .cards { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px; }
   .card { display:flex; flex-direction:column; justify-content:space-between; min-height:270px; height:100%; padding:48px; color:#111; text-decoration:none; }
   .card:focus-visible { outline:3px solid var(--ink); outline-offset:3px; }
   .c1 { background:#b388ff; color:#fff; }
-  .c2 { background:#ff2d6b; }
-  .c3 { background:#c6f700; }
+  .c2 { background:#ff2d6b; color:#fff;}
+  .c3 { background:#c6f700; color:#fff;}
   .t { display:block; font-size:17px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
   .d { display:block; margin-top:10px; font-size:15px; opacity:.85; max-width:42ch; }
   .go { align-self:flex-start; display:inline-flex; align-items:center; gap:14px; margin-top:36px; padding:18px 22px; border:1px solid currentColor;
