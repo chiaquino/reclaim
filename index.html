@@ -38,8 +38,7 @@
   .ramp { display:flex; height:10px; }
   .ramp i { flex:1; }
   main { max-width:1100px; margin:0 auto; padding:56px 24px 40px; }
-  h1 { font-size:40px; line-height:1.1; font-weight:700; margin:0 0 12px; letter-spacing:.01em; }
-  .lede { font-size:18px; color:var(--muted); margin:0 0 40px; max-width:56ch; }
+  h1 { display:inline-block; background:#fff3a6; color:#111; padding:8px 16px; font-size:40px; line-height:1.1; font-weight:700; margin:0 0 20px; letter-spacing:.01em; }
   .lede { font-family:Consolas, "Cascadia Mono", "Courier New", monospace; font-size:18px; color:var(--muted); margin:0 0 40px; max-width:56ch; }
   h2 { font-size:28px; font-weight:700; margin:0 0 20px; }
   /* one square coloured box per map. To add a map: copy a <li> and pick a colour class (c1, c2, c3) */
@@ -54,11 +53,11 @@
   .go { align-self:flex-start; display:inline-flex; align-items:center; gap:14px; margin-top:36px; padding:18px 22px; border:1px solid currentColor;
         font-family:Consolas, "Cascadia Mono", "Courier New", monospace; font-size:14px; letter-spacing:.04em; text-transform:uppercase; }
   .card:hover .go { background:#111; color:#fff; border-color:#111; }
-  .c1:hover .go { background:#fff; color:#ff2d6b; border-color:#fff; }
+  .c1:hover .go { background:#fff; color:#b388ff; border-color:#fff; }
+  .c2:hover .go { background:#fff; color:#ff2d6b; border-color:#fff; }
   .logo { display:block; width:min(100%,320px); height:auto; margin:0 0 20px; }
   footer { max-width:1100px; margin:0 auto; padding:0 24px 56px; color:var(--muted); font-size:14px; }
   footer a { color:inherit; }
-  .logo { display:block; width:min(100%,320px); height:auto; margin:0 0 20px; }
   @media (max-width:520px) {
     main { padding-top:36px; } h1 { font-size:32px; }
     .card { padding:32px; min-height:240px; }
@@ -99,10 +98,10 @@
   </ul>
 </main>
 <footer>
-  <!-- Logo: put the file "logo.png" in the same folder as this index.html (hidden until the file exists) -->
-  <!-- img class="logo" src="logo.png" alt="RECLAIM logo" onerror="this.style.display='none'">
-  <!-- EDIT: credits, funding line, contact 
-  Fondazione CMCC. Code and data notes are in the <a href="https://github.com/chiaquino/reclaim">GitHub repository</a>. -->
+  <!-- Logo: put the file "logo.png" in the same folder as this index.html, then delete the comment marks around the next line (the angle-bracket, exclamation mark and two dashes at the start, and the two dashes at the end) -->
+  <!-- <img class="logo" src="logo.png" alt="RECLAIM logo" onerror="this.style.display='none'"> -->
+  <!-- EDIT: credits, funding line, contact. To show it, delete the comment marks around the next line, as for the logo -->
+  <!-- Fondazione CMCC. Code and data notes are in the <a href="https://github.com/chiaquino/reclaim">GitHub repository</a>. -->
 </footer>
 </body>
 </html>
